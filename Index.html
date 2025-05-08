@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Bike Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f7;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .button-group {
+            margin-bottom: 20px;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-group button:hover {
+            background-color: #2c3e50;
+        }
+
+        .bike-box {
+            display: none;
+            background: white;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .bike-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Toggle Bike Features</h1>
+
+    <div class="button-group">
+        <button onclick="toggleBike('tiger')">Triumph Tiger</button>
+        <button onclick="toggleBike('xpulse')">XPulse</button>
+        <button onclick="toggleBike('pulsar')">Pulsar</button>
+        <button onclick="toggleBike('bmw')">BMW Bike</button>
+    </div>
+
+    <div id="tiger" class="bike-box">
+        <h2>Triumph Tiger</h2>
+        <img src="IMG_2136.jpg" alt="Triumph Tiger">
+        <ul>
+            <li>Engine: 888cc Triple Cylinder</li>
+            <li>Top Speed: 200 km/h</li>
+            <li>Suspension: Long Travel ADV</li>
+            <li>Category: Adventure Touring</li>
+        </ul>
+    </div>
+
+    <div id="xpulse" class="bike-box">
+        <h2>XPulse</h2>
+        <img src="IMG_2137.jpg" alt="XPulse">
+        <ul>
+            <li>Engine: 200cc Single Cylinder</li>
+            <li>Top Speed: 115 km/h</li>
+            <li>Suspension: Off-road Setup</li>
+            <li>Category: Dual Sport</li>
+        </ul>
+    </div>
+
+    <div id="pulsar" class="bike-box">
+        <h2>Pulsar</h2>
+        <img src="IMG_2138.jpg" alt="Pulsar">
+        <ul>
+            <li>Engine: 200cc Liquid-Cooled</li>
+            <li>Top Speed: 136 km/h</li>
+            <li>Brakes: ABS Disc</li>
+            <li>Category: Sports Commuter</li>
+        </ul>
+    </div>
+
+    <div id="bmw" class="bike-box">
+        <h2>BMW G 310</h2>
+        <img src="IMG_2139.jpg">
+        <ul>
+            <li>Engine: 1254cc Boxer Twin</li>
+            <li>Top Speed: 220 km/h</li>
+            <li>Tech: TFT Display, ABS Pro</li>
+            <li>Category: Premium Adventure</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleBike(bikeId) {
+            const bikeBoxes = document.querySelectorAll('.bike-box');
+            bikeBoxes.forEach(box => {
+                box.style.display = 'none';
+            });
+
+            const selectedBike = document.getElementById(bikeId);
+            selectedBike.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
